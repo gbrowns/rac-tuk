@@ -1,5 +1,5 @@
 # Contributing guidelines
-##Contibuting as part of the dev team
+## Contibuting as part of the dev team
 If you are part of the development team and was officially invited to contribute via email:
 1. Clone the repo (rac-tuk)
 2. create your new branch (descriptive branch name)
