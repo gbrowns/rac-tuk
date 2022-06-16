@@ -1,0 +1,26 @@
+{
+  "name": "rac-tuk",
+  "version": "1.0.0",
+  "description": "A website for Rotaract TUK District 9212",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Godwin254/rac-tuk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Godwin254/rac-tuk/issues"
+  },
+  "homepage": "https://github.com/Godwin254/rac-tuk#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
