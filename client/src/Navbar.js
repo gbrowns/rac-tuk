@@ -38,7 +38,7 @@ export default function portfolio(){
           <a class="nav-link active" href="https://www.linkedin.com/in/virginia-saitore-7a6b90191/">Events</a>
         </li>
       </ul>
-      <a href="https://drive.google.com/file/d/1yfvIjrp7Xs-JoDCfOcdMlViDiQSlS7iV/view?usp=sharing">
+      <a href="">
        <button class="resume">
       Contribute
   </button></a>
