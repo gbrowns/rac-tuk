@@ -1,10 +1,13 @@
 import './App.css';
-
+import Navbar from './Navbar.js';
+import About from './About.js'
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      <h1>Web Dev RAC - TUK</h1>
-      <span>Development in progress...</span>
+      <Navbar />
+      <About />
+      
     </div>
   );
 }

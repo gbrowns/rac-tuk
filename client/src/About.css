@@ -1,0 +1,43 @@
+h1{
+    text-align: center;
+    padding: 30px;
+}
+
+p{
+    font-size: 32px;
+    text-align: left;
+    margin-left: 50px;
+    font-weight: lighter;
+}
+
+
+
+.icon{
+    
+    font-size: 50px;
+    padding-bottom: 20px;
+  }
+  
+.board{
+    background-color: whitesmoke;
+    padding: 50px;
+}
+
+.description{
+    padding-top: 170px;
+}
+
+h2{
+    text-align: start;
+}
+
+span{
+    background-color: #D63E75;
+   padding: 20px;
+    border-radius: 50%;
+}
+
+button{
+    padding: 15px 35px;
+}
+
