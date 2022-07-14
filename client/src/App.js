@@ -1,6 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import About from "./pages/About/About";
+import Events from "./page/Events";
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<About />} />
         {/* Add more routes here 👍 */}
       </Routes>
+      <Events/>
     </div>
   );
 }
