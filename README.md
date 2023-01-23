@@ -1,4 +1,4 @@
-# [Rotaract Club of TUK website](rotaract-tuk.vercel.app)
+# [Rotaract Club of TUK website](https://rotaract-tuk.vercel.app/))
  A website for Rotaract TUK District 9212
  
  
