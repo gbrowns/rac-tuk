@@ -1,10 +1,14 @@
-# rac-tuk
+# [Rotaract Club of TUK website](link)
  A website for Rotaract TUK District 9212
  
  
  ### Collaborators
- 1. Washington
- 2. Saitore
- 3. Leone
- 4. Eunice
- 5. Ali
+ ``` Washington ```
+ ```Saitore```
+ ```Leone```
+ ```Eunice```
+ ```Ali```
+
+
+### Wireframes & Diagrams
+![Home page](https://user-images.githubusercontent.com/45181428/193819808-7e64d847-bdbc-475b-b540-fcf2468ccb20.png)
