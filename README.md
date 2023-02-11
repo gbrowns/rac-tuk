@@ -3,11 +3,9 @@
  
  
  ### Collaborators
- ``` Washington ```
- ```Saitore```
  ```Leone```
  ```Eunice```
- ```Ali```
+
 
 
 ### Wireframes & Diagrams
