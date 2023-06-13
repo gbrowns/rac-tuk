@@ -7,7 +7,7 @@ import {MdOutlineDeveloperMode, MdOutlineSchool} from 'react-icons/md'
 export const Footer = () => {
       const year = new Date().getFullYear()
   return (
-      <footer className='px-[8rem] bg-[#f6fafd8d]'>
+      <footer className='px-[8rem] bg-[#f6fafd8d] relative'>
             <div className='grid grid-cols-[1fr,0.3fr,0.3fr,0.3fr] py-5'>
                   <div>
                         <img src={RotaractLogo} alt='rotaract-logo' className='w-[160px] flex-initial mr-auto mb-2 object-cover'/>

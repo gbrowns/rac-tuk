@@ -8,7 +8,7 @@ import { BsInstagram, BsTwitter } from 'react-icons/bs';
 
 export const Navbar = () => {
   return (
-      <nav className='flex flex-row items-center h-[10vh] px-[8rem] bg-white shadow-sm'>
+      <nav className='flex flex-row items-center h-[10vh] px-[8rem] bg-white shadow-sm fixed top-0 z-50 w-full'>
             <img src={RotaractLogo} alt='rotaract-logo' className='w-[160px] flex-initial mr-auto object-cover'/>
 
             <Link className='text-lg font-medium mx-4' to="/">Home</Link>
@@ -18,8 +18,8 @@ export const Navbar = () => {
             <Link className='text-lg font-medium mx-4' to="/events">Events</Link>
             <BsInstagram className='text-xl mx-4 cursor-pointer' />
             <BsTwitter className='text-xl mx-2 cursor-pointer' />
-            <button className='btn btn-primary text-lg font-medium mx-4 border-none'>
-                  <Link className='' to="/donate">Donate</Link>
+            <button className='btn btn-danger text-lg font-medium mx-4 border-none'>
+                  <Link className='' to="/donate">Join Us</Link>
             </button>
       </nav>
   )
