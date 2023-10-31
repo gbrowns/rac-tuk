@@ -1,0 +1,53 @@
+@use 'colors' as *;
+
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 1.5rem;
+}
+
+@mixin titleFont($size, $color: $green) {
+  font-family: 'Satisfy', cursive;
+  font-size: $size;
+  color: $color;
+}
+
+@mixin font($size, $color: $black) {
+  font-size: $size;
+  color: $color;
+}
+
+@mixin flex($dir, $jus, $ali) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+@mixin container($pos: relative, $width, $height, $pad, $maxWidth: 1170px) {
+  position: fixed;
+  width: $width;
+  height: $height;
+  padding: $pad;
+  //max-width: $maxWidth;
+  ///margin: 0 auto;
+}
+
+@mixin image($width, $height, $fit: cover) {
+  width: $width;
+  height: $height;
+  object-fit: $fit;
+}
+
+@mixin icons($size, $color: $black) {
+  font-size: $size;
+  color: $color;
+}
+
+@mixin boxShadow($x: 0, $y: 0.1px, $blur: 10px, $spread: 0, $color: rgba(0, 0, 0, 0.092)) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin transition($time: 0.4s, $type: linear) {
+  transition: $time $type;
+}

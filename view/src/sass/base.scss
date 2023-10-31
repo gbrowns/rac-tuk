@@ -1,0 +1,36 @@
+@use 'colors' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  //text-transform: capitalize;
+  //transition: 0.2s linear;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 70.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 8.5rem;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $red;
+    border-radius: 5rem;
+  }
+}

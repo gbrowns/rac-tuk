@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Layout } from '../Layouts/Layout';
@@ -6,27 +6,28 @@ import { Layout } from '../Layouts/Layout';
 import BannerImg from '../assets/rac-image.jpg';
 import Image1 from '../assets/rac-image-1.jpg';
 import Image2 from '../assets/rac-image-2.jpg';
-import Image3 from '../assets/rac-image-3.jpg'
-import RotaractLogo from '../assets/rotaract-logo-bg.png'
+import Image3 from '../assets/rac-image-3.jpg';
+import RotaractLogo from '../assets/rotaract-logo-bg.png';
 
 export const HomePage = () => {
-      const [currentImage, setCurrentImage] = useState(0);
+  const [currentImage, setCurrentImage] = useState(0);
 
-      const images = [BannerImg, Image1, Image2, Image3];
+  const images = [BannerImg, Image1, Image2, Image3];
 
-      useEffect(() => {
-            const interval = setInterval(() => {
-                  setCurrentImage(prevImage => (prevImage + 1) % images.length);
-            }, 8000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage(prevImage => (prevImage + 1) % images.length);
+    }, 8000);
 
-            return () => {
-                  clearInterval(interval);
-            }
-      }, []);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
-   <Layout>
-      <div className='h-[90vh] flex items-center'>
+    <Layout>
+      {/**
+             *       <div className='h-[90vh] flex items-center'>
             <img src={images[currentImage]} alt="banner-img" className=' absolute object-cover h-[90vh] w-screen transition-all ease-in-out' />
             <div className='absolute h-[90vh] w-full bg-[#030b1220]'></div>
             <div className='z-10 relative px-[8rem]'>
@@ -182,7 +183,8 @@ export const HomePage = () => {
                         Get Involved
                   </button>
             </div>
-,      </section>
-   </Layout>
-  )
-}
+      </section>
+             */}
+    </Layout>
+  );
+};
