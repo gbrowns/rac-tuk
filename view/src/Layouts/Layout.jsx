@@ -7,11 +7,8 @@ export const Layout = ({ children }) => {
     //layout to be modified base on screen size
     <div className="flex flex-col">
       <Navbar />
-      <main className="relative top-28">{children}</main>
-
-      {/**
-       *  <Footer/>
-       */}
+      <main className="">{children}</main>
+      <Footer />
     </div>
   );
 };

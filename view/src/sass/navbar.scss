@@ -69,9 +69,9 @@ header {
       top: 2rem;
       left: 1rem;
       color: $white;
-      @include icons(1.6rem);
+      @include icons(1.8rem);
       border-radius: 3px;
-      background-color: $red;
+      //background-color: $red;
     }
 
     .icons {
@@ -98,11 +98,11 @@ header {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   header {
     @include container(fixed, '', 10vh, 2rem 2rem);
     img {
-      @include image(100px, '', cover);
+      @include image(120px, '', cover);
     }
     nav {
       display: none;
@@ -124,6 +124,16 @@ header {
         width: 100%;
         text-align: center;
         @include font(1.2rem);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  header {
+    .mobile-nav {
+      a {
+        padding: 1.5rem 0;
       }
     }
   }

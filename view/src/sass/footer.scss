@@ -1,0 +1,115 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+
+footer {
+  position: relative;
+  height: 90vh;
+  color: $white;
+  //@include container(relative, '', 20vh, 0, '');
+  background-color: $footer-bg;
+
+  display: grid;
+  grid-template-rows: 1fr 80px;
+
+  .top-section {
+    @include grid(20rem);
+    padding: 0 10rem;
+
+    .footer-logo {
+      @include flex(column, center, start);
+      img {
+        @include image(500px, '', contain);
+      }
+      p {
+        @include font(1.3rem, $white);
+        margin-top: 1.5rem;
+        line-height: 1.6;
+        width: 80%;
+      }
+    }
+
+    .footer-navs {
+      @include flex(row, start, center);
+      .nav-group {
+        @include flex(column, center, start);
+        flex-basis: 100%;
+
+        h3 {
+          @include font(1.3rem, $white);
+          margin-bottom: 1rem;
+          font-weight: 600;
+        }
+        a {
+          @include font(1.1rem, $white);
+          margin-bottom: 1.5rem;
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-section {
+    @include flex(row, space-around, center);
+    background-color: $footer-bg-light;
+    span {
+      @include flex(row, center, center);
+      @include font(1rem, $white);
+
+      .icon {
+        @include icons(1.5rem, $white);
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    height: 100%;
+    .top-section {
+      padding: 2rem 3rem;
+      .footer-logo {
+        margin-bottom: 2rem;
+        img {
+          @include image(200px, '', contain);
+        }
+        p {
+          width: 100%;
+          @include font(1.1rem, $white);
+          line-height: 1.9;
+        }
+      }
+
+      .footer-navs {
+        @include flex(column, center, start);
+
+        .nav-group {
+          margin-bottom: 2rem;
+          h3 {
+            @include font(1.2rem, $white);
+            margin-bottom: 1.2rem;
+          }
+          a {
+            @include font(1.1rem, $white);
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+
+    .bottom-section {
+      padding: 2rem 0;
+      @include flex(column, center, center);
+      span {
+        margin-bottom: 0.5rem;
+        @include font(0.9rem, $white);
+
+        .icon {
+          @include icons(1.2rem, $white);
+        }
+      }
+    }
+  }
+}
