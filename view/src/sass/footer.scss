@@ -3,7 +3,7 @@
 
 footer {
   position: relative;
-  height: 90vh;
+  height: 60vh;
   color: $white;
   //@include container(relative, '', 20vh, 0, '');
   background-color: $footer-bg;
@@ -13,7 +13,7 @@ footer {
 
   .top-section {
     @include grid(20rem);
-    padding: 0 10rem;
+    padding: 0 20rem;
 
     .footer-logo {
       @include flex(column, center, start);
@@ -23,7 +23,7 @@ footer {
       p {
         @include font(1.3rem, $white);
         margin-top: 1.5rem;
-        line-height: 1.6;
+        line-height: 1.8;
         width: 80%;
       }
     }

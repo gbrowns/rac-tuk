@@ -16,7 +16,7 @@ export const Footer = () => {
             execute Rotary International’s objectives in our world’s most persistent issues.
           </p>
 
-          <div></div>
+          <div>{/* social icons */}</div>
         </div>
         <div className="footer-navs">
           <div className="nav-group">
