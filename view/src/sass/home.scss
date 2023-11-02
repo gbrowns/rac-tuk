@@ -50,6 +50,7 @@ section {
       @include image(950px, '', contain);
       border-radius: 5px;
       cursor: pointer;
+      transition: all 0.5s linear;
     }
 
     .icon-box {
@@ -123,6 +124,7 @@ section {
       border-radius: 5px;
       cursor: pointer;
       transition: all 0.5s ease-in-out;
+      text-align: center;
       &:hover {
         transform: translateY(-10px);
         transition: all 0.5s ease-in-out;
@@ -137,6 +139,7 @@ section {
 }
 
 .leader-section {
+  padding: 3rem 20rem;
   @include flex(column, start, center);
   > h1 {
     @include titleFont(4rem, $red);
@@ -194,6 +197,7 @@ section {
         h4 {
           @include font(1.1rem, $black);
           margin-bottom: 1rem;
+          font-weight: 600;
         }
       }
     }
@@ -208,11 +212,11 @@ section {
       div {
         margin: 2rem 0;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
         img {
           position: relative;
-          @include image(150px, 150px, cover);
+          @include image(120px, 120px, cover);
           border-radius: 5px;
           cursor: pointer;
           width: 100%;
@@ -252,16 +256,210 @@ section {
   }
 }
 
+.partner-section {
+  background-color: rgb(50, 24, 91);
+  height: 40vh;
+  @include flex(row, center, center);
+  gap: 3rem;
+  h1 {
+    @include titleFont(4rem, $white);
+    //     margin-bottom: 3rem;
+    margin-right: 3rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    img {
+      @include image(160px, '', cover);
+      cursor: pointer;
+    }
+  }
+}
+
+.gallery-section {
+  height: auto;
+  padding: 10rem 20rem;
+  @include flex(column, start, center);
+
+  h1 {
+    @include titleFont(4rem, $black);
+    margin-bottom: 3rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 5rem;
+  }
+
+  .left-content {
+    h2 {
+      @include titleFont(3rem, $red);
+      margin-bottom: 1rem;
+    }
+    p {
+      @include font(1.4rem, $black);
+      //margin-bottom: 1rem;
+      line-height: 1.9;
+    }
+  }
+
+  .right-content {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-gap: 1rem;
+    .img-box {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+
+      img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.4s ease;
+      }
+
+      .img-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        @include font(2rem, $white);
+        font-weight: 600;
+        text-transform: capitalize;
+        text-align: center;
+        line-height: 1.8;
+      }
+
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+        .img-overlay {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      &.img-double {
+        grid-row: span 2;
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+.event-section {
+  height: 70vh;
+  @include flex(column, center, center);
+  h1 {
+    @include titleFont(4rem, $black);
+    margin-bottom: 3rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  > p {
+    @include font(1.4rem, $black);
+    width: 80%;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .event-cards {
+    @include flex(row, center, center);
+    gap: 2rem;
+
+    .event-card {
+      position: relative;
+      border: 2px solid #e9e9e9;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: $white;
+      img {
+        @include image(100%, 200px, cover);
+        border-radius: 5px 5px 0 0;
+      }
+      .date-box {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 5;
+        background-color: $red;
+        padding: 0.6rem 1.5rem;
+        border-radius: 0 5px 0 0;
+        @include font(1.2rem, $white);
+      }
+      .event-card-content {
+        padding: 1rem;
+        h2 {
+          @include font(1.5rem, $black);
+          margin-bottom: 0.5rem;
+        }
+        p {
+          @include font(1.2rem, $black);
+          margin-bottom: 0.5rem;
+        }
+
+        button {
+          background: none;
+          text-decoration: underline;
+          @include font(1.2rem, $red);
+        }
+      }
+    }
+  }
+
+  .paginations {
+    margin-top: 3rem;
+    @include flex(row, center, center);
+    span {
+      @include font(1.2rem, $black);
+      margin: 0 0.5rem;
+    }
+    button {
+      background-color: $white;
+      color: $red;
+      padding: 0.5rem 1rem;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+
+      margin: 0 2rem;
+      &:hover {
+        background-color: $white;
+        color: $red;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+}
+
 @media (max-width: 600px) {
   section {
-    padding: 0 2rem; /* Reduce padding for smaller screens */
+    padding: 0 2rem;
   }
 
   .hero-section {
     padding-top: 4rem;
-    height: auto; /* Adjust height for hero section on smaller screens */
-    grid-template-columns: 1fr; /* Change to a single column layout for smaller screens */
-    /* Modify styles for hero section for smaller screens */
+    grid-template-columns: 1fr;
+    height: 90vh;
     .left-section {
       h1 {
         font-size: 4rem;
@@ -274,31 +472,136 @@ section {
     }
 
     .right-section {
-      padding-top: 4rem;
+      padding-top: 1rem;
       img {
         width: 100%;
+      }
+
+      .icon-box {
+        display: none;
       }
     }
   }
 
-  // .hero-section .left-section {
-  //   /* Modify styles for left section of the hero section for smaller screens */
-  // }
-
-  // .hero-section .right-section {
-  //   /* Modify styles for right section of the hero section for smaller screens */
-  // }
-
-  // .about-section {
-  //   /* Modify styles for about section for smaller screens */
-  // }
-
-  .pillar-section {
-    height: auto; /* Adjust height for pillar section on smaller screens */
-    /* Modify styles for pillar section for smaller screens */
+  .about-section {
+    @include flex(column, center, center);
+    h1 {
+      width: 100%;
+    }
+    p {
+      width: 100%;
+    }
+    div {
+      @include flex(column, center, center);
+    }
   }
 
-  // .leader-section {
-  //   /* Modify styles for leader section for smaller screens */
-  // }
+  .pillar-section {
+    height: auto;
+    padding: 3rem 2rem !important;
+    .card-container {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      width: 100%;
+    }
+  }
+
+  .leader-section {
+    padding: 3rem 2rem !important;
+    > p {
+      width: 100%;
+    }
+
+    .leaders-container {
+      .top-tag {
+        flex-direction: column;
+        padding: 1rem;
+        img {
+          margin-bottom: 1.5rem;
+          width: 100%;
+          margin-right: 0;
+        }
+
+        div {
+          p {
+            width: 100%;
+          }
+        }
+      }
+      .bottom-tags {
+        h1 {
+          font-size: 2rem;
+        }
+        div {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .partner-section {
+    @include flex(column, center, center);
+    height: 30vh;
+    h1 {
+      @include titleFont(3rem, $white);
+      margin-right: 0;
+    }
+
+    div {
+      img {
+        @include image(200px, '', cover);
+      }
+    }
+  }
+
+  .gallery-section {
+    padding: 3rem 2rem !important;
+
+    .content {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .right-content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  .event-section {
+    height: auto;
+    h1 {
+      margin-bottom: 2rem;
+    }
+
+    .event-cards {
+      .event-card {
+        img {
+          @include image(100%, 100px, cover);
+        }
+        .date-box {
+          padding: 0.3rem 0.5rem;
+          @include font(1rem, $white);
+        }
+        .event-card-content {
+          padding: 0.8rem;
+          h2 {
+            @include font(1.3rem, $black);
+            margin-bottom: 0.5rem;
+          }
+          p {
+            @include font(1.1rem, $black);
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+
+    .paginations {
+      margin: 2rem 0;
+    }
+  }
 }
