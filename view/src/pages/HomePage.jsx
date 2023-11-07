@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { DATA } from '../utils/data';
 
 import { Layout } from '../Layouts/Layout';
 
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import {MdCall, MdEmail, MdMail} from 'react-icons/md';
 
 import BannerImg from '../assets/rac-image.jpg';
 import Image1 from '../assets/rac-image-1.jpg';
@@ -15,6 +17,8 @@ export const HomePage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const images = [BannerImg, Image1, Image2, Image3];
+
+  const currentPresident = DATA.leaders.filter(leader => leader.position === 'President')[0];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -96,37 +100,66 @@ export const HomePage = () => {
         </p>
         <div className="leaders-container">
           <div className="top-tag">
-            <img src={Image1} alt="image" width="100px" />
-            <div>
-              <h2>John Doe</h2>
-              <span>President</span>
-              <p>John Doe is the current president of the club. He is a student at the Technical University of Kenya</p>
+            {
+              currentPresident && (
+                <>
+                <div>
+                  <h2>{currentPresident.name}</h2>
+                  <span>{currentPresident.position}</span>
+                  <p>{currentPresident.bio}</p>
 
-              <h4>Board Year 2023 - 2024</h4>
-            </div>
+                  <h4>Board Year {currentPresident.boardYear}</h4>
+
+                  <button>
+                    <MdMail className='icon'/>
+                    Contact {currentPresident.name}
+                  </button>
+                </div>
+                <img src={currentPresident.image} alt="image" width="100px" />
+                </>
+              )
+            }
           </div>
 
           <div className="bottom-tags">
             <h1>Board Members</h1>
-            <div>
-              <img src={Image1} alt="image" width="100px" data-text="Name here" />
-              <img src={Image1} alt="image" width="100px" data-text="Name here" />
-              <img src={Image1} alt="image" width="100px" data-text="Name here" />
-              <img src={Image1} alt="image" width="100px" data-text="Name here" />
-              <img src={Image1} alt="image" width="100px" data-text="Name here" />
-              <img src={Image1} alt="image" width="100px" data-text="Name here" />
-              <img src={Image1} alt="image" width="100px" data-text="Name here" />
-              <img src={Image1} alt="image" width="100px" data-text="Name here" />
+            <div className='table-container'>
+              {
+                DATA.leaders.slice(0,5).map(leader => {
+                  if (leader.position === 'President') return null;
+                  return (
+                    <div className="table-row">
+                      <div className="table-cell">
+                        <img src={leader.image} alt="image" width="100px" data-text="Name here" />
+                        {leader.name}
+                      </div>
+                      <div className="table-cell">{leader.position}</div>
+                      {/* <div className="table-cell">{leader.boardYear}</div> */}
+                      <div className="table-cell contact-cell"><MdMail className='icon'/></div>
+                    </div>
+                  )
+                })
+              }
             </div>
+            <button>View more</button>
           </div>
         </div>
       </section>
       <section className="partner-section">
         <h1>Meet Our Partners</h1>
         <div>
-          <img src={RotaractLogo} alt="logo" />
-          <img src={RotaractLogo} alt="logo" />
-          <img src={RotaractLogo} alt="logo" />
+          {
+            DATA.partners.map(partner => (
+              // <div className="partner-box">
+              //   <img src={partner.logo} alt="logo" />
+              //   <h2>{partner.name}</h2>
+              //   <a href={partner.website} target="_blank" rel="noreferrer">
+              //     Visit Website
+              //   </a>
+              // </div>
+              <img src={partner.logo} alt={partner.name} />
+            ))
+          }
         </div>
       </section>
       <section className="gallery-section">
@@ -144,30 +177,15 @@ export const HomePage = () => {
             </p>
           </div>
           <div className="right-content">
-            <div className="img-box img-double">
-              <img src={Image1} alt="image" width="100px" />
-              <div className="img-overlay">Board Installation</div>
-            </div>
-            <div className="img-box ">
-              <img src={Image1} alt="image" width="100px" />
-              <div className="img-overlay">RYLA 2023</div>
-            </div>
-            <div className="img-box">
-              <img src={Image1} alt="image" width="100px" />
-              <div className="img-overlay">RYLA 2023</div>
-            </div>
-            <div className="img-box img-double">
-              <img src={Image1} alt="image" width="100px" />
-              <div className="img-overlay">RYLA 2023</div>
-            </div>
-            <div className="img-box">
-              <img src={Image1} alt="image" width="100px" />
-              <div className="img-overlay">RYLA 2023</div>
-            </div>
-            <div className="img-box ">
-              <img src={Image1} alt="image" width="100px" />
-              <div className="img-overlay">RYLA 2023</div>
-            </div>
+            {
+              DATA.gallery.slice(0,6).map((gallery, index) => (
+                <div className={index === 0 || index === 3 ? `img-box img-double` : `img-box` }>
+                  <img src={gallery.image} alt="image" width="100px" />
+                  <div className="img-overlay">{gallery.title}</div>
+                </div>
+              ))
+            }
+
           </div>
         </div>
       </section>
@@ -175,24 +193,19 @@ export const HomePage = () => {
         <h1>Latest events</h1>
         <p></p>
         <div className="event-cards">
-          <div className="event-card">
-            <img src={Image1} alt="image" width="100px" />
-            <div className="date-box">12 Aug 2023</div>
-            <div className="event-card-content">
-              <h2>Event Title</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptatum.</p>
-              <button>Read More</button>
-            </div>
-          </div>
-          <div className="event-card">
-            <img src={Image1} alt="image" width="100px" />
-            <div className="date-box">12 Aug 2023</div>
-            <div className="event-card-content">
-              <h2>Event Title</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptatum. </p>
-              <button>Read More</button>
-            </div>
-          </div>
+          {
+            DATA.events.slice(0,3).map(event => (
+              <div className="event-card">
+                <img src={event.eventImg} alt="image" width="100px" />
+                <div className="date-box">{event.date}</div>
+                <div className="event-card-content">
+                  <h2>{event.title}</h2>
+                  <p>{event.description}</p>
+                  <button>Read More</button>
+                </div>
+              </div>
+            ))
+          }
         </div>
         <div className="paginations">
           <button>Prev</button>
